@@ -1,0 +1,14 @@
+def is_anagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    sorted_s1 = sorted(s1.lower())
+    sorted_s2 = sorted(s2.lower())
+    return sorted_s1 == sorted_s2
+
+def find_anagrams(word, word_list):
+    anagrams = [w for w in word_list if is_anagram(word, w)]
+    return anagrams
+
+word = "listen"
+word_list = ["silent", "enlist", "tinsel", "apple", "inlets"]
+print("Anagrams of", word, ":", find_anagrams(word, word_list))
